@@ -4,11 +4,11 @@ import { Button } from "../ui/button";
 
 export const Contact = () => {
   return (
-    <Section id="contact" className="py-24 md:py-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16">
-        <div className="space-y-8">
+    <Section id="contact" className="py-16 md:py-24 px-4 md:px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-20 mb-12 md:mb-16">
+        <div className="space-y-6 md:space-y-8 text-center lg:text-left">
           <motion.h2
-            className="text-4xl md:text-6xl font-bold text-cream-100"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cream-100"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -19,7 +19,7 @@ export const Contact = () => {
             </span>
           </motion.h2>
           <motion.p
-            className="text-zinc-400 text-lg max-w-md leading-relaxed"
+            className="text-zinc-400 text-base md:text-lg max-w-md mx-auto lg:mx-0 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -34,26 +34,28 @@ export const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="space-y-3 pt-4"
+            className="space-y-2 md:space-y-3 pt-2 md:pt-4"
           >
-            <p className="text-white hover:text-zinc-300 transition-colors cursor-pointer">
+            <p className="text-white hover:text-zinc-300 transition-colors cursor-pointer text-sm md:text-base">
               hello@maisonpixels.com
             </p>
-            <p className="text-white hover:text-zinc-300 transition-colors cursor-pointer">
+            <p className="text-white hover:text-zinc-300 transition-colors cursor-pointer text-sm md:text-base">
               +91 8750714310
             </p>
-            <p className="text-white pt-2">New Delhi, India</p>
+            <p className="text-white pt-2 text-sm md:text-base">
+              New Delhi, India
+            </p>
           </motion.div>
         </div>
 
         <motion.form
-          className="space-y-6 bg-zinc-900/50 p-8 md:p-10 rounded-2xl border border-zinc-800"
+          className="space-y-4 md:space-y-6 bg-zinc-900/50 p-6 md:p-8 lg:p-10 rounded-2xl border border-zinc-800"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             <div className="space-y-2">
               <label
                 htmlFor="name"
@@ -103,7 +105,7 @@ export const Contact = () => {
         </motion.form>
       </div>
 
-      <div className="pt-10 mt-20 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-200">
+      <div className="pt-8 md:pt-10 mt-12 md:mt-20 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-zinc-200">
         <p>&copy; 2024 Maison Pixels. All rights reserved.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-cream-100 transition-colors">

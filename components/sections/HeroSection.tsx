@@ -5,35 +5,35 @@ import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <Section className="mt-14 flex items-center justify-center pt-32 pb-20 relative overflow-visible">
+    <Section className="mt-16 md:mt-14 flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-20 relative overflow-visible px-4">
       <div className="max-w-3xl mx-auto text-center z-10 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-8 inline-flex items-center gap-2 px-3 py-2 rounded-full border border-zinc-900 bg-black backdrop-blur-sm"
+          className="mb-6 md:mb-8 inline-flex items-center gap-2 px-3 py-2 rounded-full border border-zinc-900 bg-black backdrop-blur-sm"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="text-xs uppercase tracking-widest text-zinc-400 font-medium">
+          <span className="text-[10px] md:text-xs uppercase tracking-widest text-zinc-400 font-medium">
             Available for new projects
           </span>
         </motion.div>
 
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-8"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight leading-[1.1] md:leading-[1.05] mb-6 md:mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <span className="text-yellow-700">We craft digital</span>{" "}
-          <br className="hidden md:block" />
+          <br className="hidden sm:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-b from-white via-zinc-300 to-zinc-600">
             masterpieces.
           </span>
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 leading-relaxed"
+          className="text-base md:text-xl text-zinc-400 max-w-2xl mb-8 md:mb-12 leading-relaxed px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
