@@ -1,12 +1,22 @@
 "use client";
 
 import * as motion from "motion/react-client";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Meet from "./Meet";
+import Link from "next/link";
 
-const navItems = ["SERVICES", "WORKS"];
+const navItems = [
+  {
+    name: "SERVICES",
+    url: "#services",
+  },
+  {
+    name: "WORK",
+    url: "#work",
+  },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +30,10 @@ const Navbar = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="w-full max-w-200 flex justify-between items-center p-4 px-4 md:px-6 rounded-full bg-zinc-950"
         >
-          <div className="text-white text-base md:text-lg font-bold flex items-center gap-2">
+          <Link
+            href={"#"}
+            className="text-white select-none text-base md:text-lg font-bold flex items-center gap-2"
+          >
             <svg
               width="40"
               height="40"
@@ -43,7 +56,7 @@ const Navbar = () => {
 
               <circle cx="150" cy="150" r="120" fill="url(#bgGlow)" />
 
-            {/* logo svg icon */}
+              {/* logo svg icon */}
 
               <path
                 d="M90 145 L150 95 L210 145 V205 H90 Z"
@@ -94,7 +107,7 @@ const Navbar = () => {
                 rx="1"
                 fill="#60a5fa"
               />
-           
+
               <path
                 d="M60 210 C120 260 180 260 240 210"
                 stroke="url(#softWave)"
@@ -104,17 +117,18 @@ const Navbar = () => {
               />
             </svg>
             MAISON PIXELS
-          </div>
+          </Link>
 
           {/* desktop */}
           <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
-              <button
-                key={item}
+              <Link
+                href={item.url}
+                key={item.name}
                 className="px-3 py-1 font-semibold text-white cursor-pointer hover:text-zinc-200 transition text-sm"
               >
-                {item}
-              </button>
+                {item.name}
+              </Link>
             ))}
             <Meet />
           </div>
@@ -137,22 +151,16 @@ const Navbar = () => {
         >
           <div className="flex flex-col items-center gap-6">
             {navItems.map((item) => (
-              <button
-                key={item}
+              <Link
+                href={item.url}
+                key={item.name}
                 onClick={() => setIsOpen(false)}
-                className="text-2xl font-semibold text-white hover:text-zinc-300 transition"
+                className="text-2xl cursor-pointer font-semibold text-white hover:text-zinc-300 transition"
               >
-                {item}
-              </button>
+                {item.name}
+              </Link>
             ))}
-            <Button
-              className="mt-4 font-bold cursor-pointer rounded-full w-full max-w-xs"
-              variant="outline"
-              size="lg"
-              onClick={() => setIsOpen(false)}
-            >
-              CONNECT WITH US
-            </Button>
+            <Meet />
           </div>
         </motion.div>
       )}
