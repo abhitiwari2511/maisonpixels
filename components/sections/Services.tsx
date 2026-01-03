@@ -17,7 +17,7 @@ const services = [
   },
   {
     icon: <Layers className="w-6 h-6" />,
-    title: "App Deevelopment",
+    title: "App Development",
     description:
       "Custom mobile applications designed to provide seamless user experiences across all devices.",
   },
@@ -34,7 +34,7 @@ export const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center md:text-left"
         >
-          <h2 className="text-3xl sm:text-4xl text-yellow-500 md:text-5xl font-bold mb-4 md:mb-6 text-cream-100">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-cream-100">
             Our Expertise
           </h2>
           <p className="text-cream-200/60 text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0">

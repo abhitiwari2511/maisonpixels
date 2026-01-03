@@ -1,25 +1,15 @@
 import * as motion from "motion/react-client";
 import { Section } from "../ui/Section";
-import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Vanguard Architecture",
+    title: "Glam Diamonds",
     category: "Development",
-    image: "https://picsum.photos/id/12/800/600",
-    description: "A minimal portfolio for a leading architectural firm.",
-  },
-  {
-    title: "Eos Wellness",
-    category: "Design",
-    image: "https://picsum.photos/id/24/800/600",
-    description: "Rebranding and e-commerce platform for organic skincare.",
-  },
-  {
-    title: "Nexus Finance",
-    category: "Web App",
-    image: "https://picsum.photos/id/48/800/600",
-    description: "Real-time dashboard for a fintech startup.",
+    image:
+      "https://res.cloudinary.com/dilmh6rup/image/upload/v1767452794/Screenshot_2026-01-03_203222_fg4oyr.png",
+    description:
+      "A diamond e-commerce platform with custom filtering and search.",
+    url: "https://glamdiamonds.vercel.app/",
   },
 ];
 
@@ -41,7 +31,7 @@ export const Work = () => {
           </h2>
         </motion.div>
 
-        <motion.a
+        {/* <motion.a
           href="#"
           className="inline-flex items-center gap-2 text-sm text-cream-100 border-b border-cream-100/30 pb-1 hover:border-cream-100 transition-colors"
           initial={{ opacity: 0 }}
@@ -50,12 +40,14 @@ export const Work = () => {
           transition={{ delay: 0.3 }}
         >
           View All Projects <ExternalLink className="w-3 h-3" />
-        </motion.a>
+        </motion.a> */}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {projects.map((project, index) => (
-          <motion.div
+          <motion.a
+            href={project.url}
+            target="_blank"
             key={index}
             className="group relative cursor-pointer"
             initial={{ opacity: 0, y: 30 }}
@@ -67,7 +59,7 @@ export const Work = () => {
               <motion.img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                className="w-full h-full object-fit transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
               />
             </div>
 
@@ -84,18 +76,18 @@ export const Work = () => {
                 {project.category}
               </span>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
 
-      <div className="mt-12 text-center md:hidden">
+      {/* <div className="mt-12 text-center md:hidden">
         <a
           href="#"
           className="inline-flex items-center gap-2 text-sm text-cream-100 border-b border-cream-100/30 pb-1"
         >
           View All Projects <ExternalLink className="w-3 h-3" />
         </a>
-      </div>
+      </div> */}
     </Section>
   );
 };

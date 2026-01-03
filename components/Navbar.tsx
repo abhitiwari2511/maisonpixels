@@ -4,8 +4,9 @@ import * as motion from "motion/react-client";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Meet from "./Meet";
 
-const navItems = ["ABOUT", "SERVICES", "WORKS"];
+const navItems = ["SERVICES", "WORKS"];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +70,6 @@ const Navbar = () => {
                 strokeLinejoin="round"
               />
 
-              
               <rect
                 x="205"
                 y="200"
@@ -94,7 +94,6 @@ const Navbar = () => {
                 rx="1"
                 fill="#60a5fa"
               />
-
            
               <path
                 d="M60 210 C120 260 180 260 240 210"
@@ -117,13 +116,7 @@ const Navbar = () => {
                 {item}
               </button>
             ))}
-            <Button
-              className="ml-2 font-bold cursor-pointer rounded-full text-sm"
-              variant="outline"
-              size="default"
-            >
-              CONNECT WITH US
-            </Button>
+            <Meet />
           </div>
 
           <button
