@@ -1,0 +1,10 @@
+[
+  {
+    "id": "glam-diamonds",
+    "title": "Glam Diamonds",
+    "category": "Development",
+    "image": "https://res.cloudinary.com/dilmh6rup/image/upload/v1767452794/Screenshot_2026-01-03_203222_fg4oyr.png",
+    "description": "A diamond e-commerce platform with custom filtering and search.",
+    "url": "https://glamdiamonds.vercel.app/"
+  }
+]

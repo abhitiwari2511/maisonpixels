@@ -7,8 +7,11 @@ import Meet from "../Meet";
 
 export const Contact = () => {
   return (
-    <section id="contact" className="w-full py-16 md:py-24 px-6 md:px-12 bg-[#09090b] text-white relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="w-full py-16 md:py-24 px-6 md:px-12 bg-[#09090b] text-white relative overflow-hidden">
+      {/* Subtle grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div className="space-y-6 text-center lg:text-left">
             <motion.span

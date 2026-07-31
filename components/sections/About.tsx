@@ -6,6 +6,9 @@ import * as motion from "motion/react-client";
 export const About = () => {
   return (
     <section id="about" className="w-full py-24 md:py-36 px-6 md:px-12 bg-[#09090b] text-white relative overflow-hidden">
+      {/* Subtle grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+
       {/* Subtle ambient orange glow behind section */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[450px] h-[450px] bg-[#ef4d23]/10 rounded-full blur-[150px] pointer-events-none" />
 
