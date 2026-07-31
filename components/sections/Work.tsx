@@ -1,5 +1,8 @@
+"use client";
+
+import React from "react";
 import * as motion from "motion/react-client";
-import { Section } from "../ui/Section";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -15,79 +18,67 @@ const projects = [
 
 export const Work = () => {
   return (
-    <Section id="work" className="px-4 md:px-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10 md:mb-16 lg:mb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="text-cream-200/50 uppercase tracking-widest text-xs md:text-sm mb-2 block">
-            Selected Work
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream-100">
-            Featured Projects
-          </h2>
-        </motion.div>
-
-        {/* <motion.a
-          href="#"
-          className="inline-flex items-center gap-2 text-sm text-cream-100 border-b border-cream-100/30 pb-1 hover:border-cream-100 transition-colors"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-        >
-          View All Projects <ExternalLink className="w-3 h-3" />
-        </motion.a> */}
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {projects.map((project, index) => (
-          <motion.a
-            href={project.url}
-            target="_blank"
-            key={index}
-            className="group relative cursor-pointer"
-            initial={{ opacity: 0, y: 30 }}
+    <section id="work" className="w-full py-20 md:py-28 px-6 md:px-12 bg-[#09090b] text-white relative">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-10 sm:mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="overflow-hidden rounded-xl mb-4 md:mb-6 bg-white/5 aspect-4/3">
-              <motion.img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-fit transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-              />
-            </div>
+            <span className="text-[#ef4d23] uppercase tracking-widest text-xs font-extrabold mb-3 block">
+              SELECTED WORK
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-serif">
+              Featured Projects
+            </h2>
+          </motion.div>
+        </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
-              <div className="flex-1">
-                <h3 className="text-lg md:text-xl font-medium text-cream-100 mb-1 group-hover:underline decoration-1 underline-offset-4">
-                  {project.title}
-                </h3>
-                <p className="text-xs md:text-sm text-cream-200/50">
-                  {project.description}
-                </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {projects.map((project, index) => (
+            <motion.a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={index}
+              className="group bg-zinc-900/50 rounded-2xl p-5 border border-zinc-800/80 shadow-xl hover:border-[#ef4d23]/50 transition-all duration-300 flex flex-col justify-between"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+            >
+              <div className="overflow-hidden rounded-xl mb-5 bg-zinc-950 aspect-4/3 relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-xs p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ExternalLink className="w-4 h-4 text-[#ef4d23]" />
+                </div>
               </div>
-              <span className="text-[10px] md:text-xs px-2 md:px-3 py-1 rounded-full border border-white/10 text-cream-200/70 whitespace-nowrap">
-                {project.category}
-              </span>
-            </div>
-          </motion.a>
-        ))}
-      </div>
 
-      {/* <div className="mt-12 text-center md:hidden">
-        <a
-          href="#"
-          className="inline-flex items-center gap-2 text-sm text-cream-100 border-b border-cream-100/30 pb-1"
-        >
-          View All Projects <ExternalLink className="w-3 h-3" />
-        </a>
-      </div> */}
-    </Section>
+              <div className="flex justify-between items-start gap-2 pt-1">
+                <div>
+                  <h3 className="text-xl font-bold font-serif text-white group-hover:text-[#ef4d23] transition-colors mb-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-300 font-medium">
+                    {project.description}
+                  </p>
+                </div>
+                <span className="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-[#ef4d23]/15 text-[#ef4d23] whitespace-nowrap">
+                  {project.category}
+                </span>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
+
+export default Work;

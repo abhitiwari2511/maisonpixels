@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif",
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -28,8 +30,6 @@ export const metadata: Metadata = {
     "Human-Centric Experiences",
     "Robust Engineering",
     "Creative Agency",
-    "Digital Solutions",
-    "Tech Innovation",
   ],
   category: "Technology",
 };
@@ -40,11 +40,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-linear-to-r from-blue-600 via-black to-red-600 antialiased`}
+        className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased bg-[#09090b] text-white selection:bg-[#ef4d23] selection:text-white m-0 p-0 overflow-x-hidden`}
       >
-        <Navbar />
         {children}
       </body>
     </html>

@@ -1,57 +1,68 @@
+"use client";
+
+import React from "react";
 import * as motion from "motion/react-client";
-import { Section } from "../ui/Section";
 
 export const About = () => {
   return (
-    <Section
-      id="about"
-      className="bg-dark-950 relative overflow-hidden px-4 md:px-6"
-    >
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-72 h-72 md:w-150 md:h-150 bg-indigo-900/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
+    <section id="about" className="w-full py-24 md:py-36 px-6 md:px-12 bg-[#09090b] text-white relative overflow-hidden">
+      {/* Subtle ambient orange glow behind section */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[450px] h-[450px] bg-[#ef4d23]/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto relative z-10 text-center px-2">
+      <div className="max-w-4xl mx-auto relative z-10 text-center">
+        {/* Uppercase Orange Label */}
+        <motion.span
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-[#ef4d23] uppercase tracking-widest text-xs font-extrabold mb-6 inline-block"
+        >
+          ABOUT MAISON PIXELS
+        </motion.span>
+
+        {/* Large Serif Heading */}
         <motion.h2
-          className="text-2xl sm:text-3xl md:text-[3.5rem] font-bold mb-6 md:mb-8 leading-tight font-serif italic"
+          className="text-3xl sm:text-5xl md:text-6xl font-bold mb-8 leading-[1.15] font-serif italic text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-cream-100">&ldquo;Good design is obvious.</span>{" "}
-          <br className="hidden sm:block" />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-pink-300 via-purple-300 to-indigo-300">
-            Great design is transparent&rdquo;
-          </span>
+          &ldquo;Good design is obvious. <br className="hidden sm:block" />
+          <span>Great design is </span>
+          <span className="text-[#ef4d23] font-extrabold">transparent&rdquo;</span>
         </motion.h2>
+
+        {/* Paragraph Description */}
         <motion.p
-          className="text-base md:text-xl text-cream-200/60 mb-6 leading-relaxed"
+          className="text-zinc-400 text-base sm:text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed font-normal"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          We are a team of perfectionists who believe that the best digital
-          experiences are the ones that feel natural. We strip away the
-          unnecessary to reveal the essential.
+          We are a team of <strong className="text-white font-semibold">perfectionists</strong> who believe that the best digital experiences are the ones that feel natural. We strip away the unnecessary to <strong className="text-white font-semibold">reveal the essential</strong>.
         </motion.p>
+
+        {/* Divider & Stats Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-10 md:mt-16 pt-8 md:pt-12 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-zinc-800/80">
             {[
-              { label: "Founded", value: "2019" },
-              { label: "Projects", value: "150+" },
-              { label: "Awards", value: "12" },
-              { label: "Clients", value: "Global" },
+              { label: "FOUNDED", value: "2019" },
+              { label: "PROJECTS", value: "150+" },
+              { label: "AWARDS", value: "12" },
+              { label: "CLIENTS", value: "Global" },
             ].map((stat, i) => (
-              <div key={i}>
-                <div className="text-2xl md:text-3xl font-bold mb-1 text-cream-50">
+              <div key={i} className="flex flex-col items-center">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 text-[#ef4d23] font-serif tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-[10px] md:text-xs uppercase tracking-widest text-indigo-200/40">
+                <div className="text-[11px] uppercase tracking-widest text-zinc-300 font-extrabold">
                   {stat.label}
                 </div>
               </div>
@@ -59,6 +70,8 @@ export const About = () => {
           </div>
         </motion.div>
       </div>
-    </Section>
+    </section>
   );
 };
+
+export default About;
