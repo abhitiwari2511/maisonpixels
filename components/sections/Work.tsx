@@ -1,11 +1,12 @@
-"use client";
 
-import React from "react";
 import * as motion from "motion/react-client";
 import { ExternalLink } from "lucide-react";
-import projects from "@/data/projects.json";
+import { getProjects, Project } from "@/lib/sanity";
+import initialProjects from "@/data/projects.json";
 
-export const Work = () => {
+export const Work = async () => {
+  const projectList = await getProjects();
+
   return (
     <section id="work" className="w-full py-20 md:py-28 px-6 md:px-12 bg-[#09090b] text-white relative overflow-hidden">
       {/* Subtle grid pattern overlay */}
@@ -22,14 +23,14 @@ export const Work = () => {
             <span className="text-[#ef4d23] uppercase tracking-widest text-xs font-extrabold mb-3 block">
               SELECTED WORK
             </span>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-serif">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#fafafa] font-serif">
               Featured Projects
             </h2>
           </motion.div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {projects.map((project, index) => (
+          {projectList.map((project, index) => (
             <motion.a
               href={project.url}
               target="_blank"
