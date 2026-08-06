@@ -1,8 +1,8 @@
 
 import * as motion from "motion/react-client";
 import { ExternalLink } from "lucide-react";
-import { getProjects, Project } from "@/lib/sanity";
-import initialProjects from "@/data/projects.json";
+import { getProjects } from "@/lib/sanity";
+// import initialProjects from "@/data/projects.json";
 
 export const Work = async () => {
   const projectList = await getProjects();
@@ -27,10 +27,25 @@ export const Work = async () => {
               Featured Projects
             </h2>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <a
+              href="/work"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 hover:bg-[#ef4d23] text-white text-sm font-bold border border-zinc-800 hover:border-[#ef4d23] transition-all duration-300 shadow-lg group"
+            >
+              <span>See All Work</span>
+              <ExternalLink className="w-4 h-4 text-[#ef4d23] group-hover:text-white transition-colors" />
+            </a>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {projectList.map((project, index) => (
+          {projectList.slice(0, 3).map((project, index) => (
             <motion.a
               href={project.url}
               target="_blank"
@@ -68,6 +83,17 @@ export const Work = async () => {
               </div>
             </motion.a>
           ))}
+        </div>
+
+        {/* Bottom CTA for Work Page */}
+        <div className="mt-14 text-center sm:hidden">
+          <a
+            href="/work"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ef4d23] text-white text-sm font-bold hover:bg-[#d9421a] transition-all duration-300 shadow-[0_0_25px_rgba(239,77,35,0.4)]"
+          >
+            <span>See All Work Cards</span>
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

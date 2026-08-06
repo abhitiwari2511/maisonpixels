@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import Services from "@/components/sections/Services";
 import Work from "@/components/sections/Work";
+import Pricing from "@/components/sections/Pricing";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <main className="w-full flex flex-col bg-[#09090b] m-0 p-0">
         <Services />
         <Work />
+        <Pricing />
         <About />
         <Contact />
       </main>

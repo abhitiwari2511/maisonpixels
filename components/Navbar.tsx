@@ -9,11 +9,19 @@ import Link from "next/link";
 const navItems = [
   {
     name: "SERVICES",
-    url: "#services",
+    url: "/services",
   },
   {
     name: "WORK",
-    url: "#work",
+    url: "/work",
+  },
+  {
+    name: "PRICING",
+    url: "/#pricing",
+  },
+  {
+    name: "ABOUT",
+    url: "/#about",
   },
 ];
 
@@ -31,7 +39,7 @@ const Navbar = () => {
         >
           <div className="w-full flex justify-between items-center py-2.5 px-5 md:px-7 rounded-full bg-zinc-950/90 backdrop-blur-xl">
             <Link
-              href="#"
+              href="/"
               className="text-white select-none text-base md:text-lg font-bold flex items-center gap-3 tracking-wider group"
             >
               <div className="relative">
